@@ -16,7 +16,11 @@ slidesOptions =
                 Theme.styles
             <|
                 -- backgroundColorArg codeBackgroundColorArg fontSizeArg colorArg
-                Slides.Styles.elmMinimalist (hex "#fff") (hex "#ccc") (px 18) (hex "#000")
+                Slides.Styles.elmMinimalist
+                    (hex "#dcf9f9")
+                    (hex "#293940")
+                    (px 18)
+                    (hex "#3e2f40")
         , title = "Let's get functional - Codebar 2022"
     }
 

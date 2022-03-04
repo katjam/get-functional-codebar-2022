@@ -1,0 +1,44 @@
+---
+Slide 1
+---
+
+me
+
+
+---
+Slide 2
+===
+
+It's a big topic. I'm not going to teach it to you
+ give you the tools and vocabulary to get started
+ Dispell a few myths and show that it's for everyone
+Steeped in academia
+I'll try to use plain language, so might not always be strictly accurate in a mathematical sense. My intention is to give access to the ideas, not make you a master.
+By the end hope you start to recognise
+ where you already use it
+ when you are making a choice to use or not
+
+---
+Lisp (1958)
+---
+- Good read Structure & Interpretation of Computer Programs
+
+ ---
+ intro 5 stages / steps
+ ---
+
+ ---
+ demo
+ ---
+ Lambda Calculus heart function composition
+  - anonymous - they do not need to be named or assigned to a variable
+  - unary - only accept one parameter so if you need more than one, curry (n-ary)
+  - first-class - they can be inputs and they can return other functions
+
+
+---
+obvious benefits
+---
+easy to learn (small building blocks)
+Object oriented is about relationships and networks - and we all know that's a very complicated landscape to keep track of.
+

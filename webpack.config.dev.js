@@ -8,7 +8,7 @@ module.exports = {
     ]
   },
 
-  mode: 'development',
+  mode: 'production',
 
   output: {
     path: path.resolve(__dirname + '/dist'),
@@ -38,7 +38,7 @@ module.exports = {
           {
             loader: 'elm-webpack-loader',
             options: {
-              debug: true,
+              debug: false,
               optimize: false,
               verbose: true,
             },
