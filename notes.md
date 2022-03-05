@@ -70,14 +70,26 @@ Slide 7 - the 5 steps towards a functional mindset
  - Describes as a prgression
 
 ## Know your code (Actions, Data, Calculations)
- - Actions: It matters when these happen and how many times - side effects. Spend a lot of time on them, move all calculations out.
- - Data: Static immutable information
- - Calculation: Info in and out - always same result, no matter when they run - pure functions
+### Actions: It matters when these happen and how many times - side effects / impure functions. Spend a lot of time on them, move all calculations out.
 
-￼    ## Higher order, First class
-￼    ## Working with immutable
-￼    ## Data modelling
-￼    ## Architectural patterns (onion, state machine)
+### Data: Static immutable values.
+
+### Calculation: Info in and out - always same result, no matter when they run - pure functions
+
+## Higher order, First class
+- First class functions can be assigned to variables, passed as arguments or returned from functions
+- Higher order functions that take those functions as arguments or return functions as arguments
+- These can be actions or calculations
+- Need to know how to use them and how to create them
+- Makes currying possible.
+
+
+## Working with immutable
+ Working with immutable data is something we have to enforce. Computer memory is designed to be mutable. The main skill is learning patterns of how to design for easy, reliable copying. e.g. Richard record copy. For example updating nested data decide which parts to copy. Transformation pipelines.
+
+
+## Data modelling
+## Architectural patterns (onion, state machine)
 
  Lambda Calculus heart function composition
   - anonymous - they do not need to be named or assigned to a variable

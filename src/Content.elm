@@ -27,13 +27,17 @@ slidesMarkdown =
         , "## Why does it matter?"
         ]
     , Slides.md """
-    # History
+    # Functional thinking...
+
+    ![History of Functional](/history.jpg)
 
     """
 
     -- [cCc] wordCloud drawing of vocab
     , Slides.md """
-    # Vocab
+    # Functional words...
+
+    ![Functional vocabulary](/vocab.jpg)
 
     """
 
