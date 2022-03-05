@@ -8,17 +8,34 @@ slidesMarkdown =
     -- html, htmlFragments, md, mdFragments
     [ Slides.md """
     # Let's get functional
+    [cCc] Robot image
+
+    ### Katja Mordaunt
+    email: katja@codereading.club
     
-    Title slide with codebar logo, subtitle & me related info
+    github: @katjam
+
+    ### Slides for this talk
+    [cCc] Todo publish
+
+    ![Codebar Logo](/codebarlogo.png)
     """
     , Slides.md """
-    # The meaning of functional
-   
-   Some vocab & history
-   wordCloud drawing of vocab
+    # This talk...
+    ## What is functional programming?
+    ## Is it for me? Where do I start?
+    ## Why does it matter?
+  """
+    , Slides.md """ 
+   # History
    Most writing about is historically academic
    Seems impractical in production - no side effects
     """
+    , Slides.md """
+  # Vocab
+
+   [cCc] wordCloud drawing of vocab
+"""
     , Slides.md """
     # Should we be scared?
 

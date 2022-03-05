@@ -1,12 +1,20 @@
+https://www.color-hex.com/color-palette/4453
 ---
-Slide 1
+Slide 1 - introl me
 ---
 
-me
+How I got interested in functional
+
+- Saw a talk on F# - thought this is very cool and makes sense for my brain
+- As a kid I was terrible at numeracy but when algebra came along, that clicked
+- but I'm a php/js developer
+- Then elm - few years later, when the js ecosystem was really creaking around 2016
+- along with the static typing system elm really made sense for me
+- Been an active member of the elm community since then
 
 
 ---
-Slide 2
+Slide 2 - talk outline
 ===
 
 It's a big topic. I'm not going to teach it to you
@@ -19,9 +27,19 @@ By the end hope you start to recognise
  when you are making a choice to use or not
 
 ---
-Lisp (1958)
+Slide 3 - History
 ---
+Lisp (1958)
+
 - Good read Structure & Interpretation of Computer Programs
+
+---
+Slide 4 - Vocab
+---
+
+- I'm going to tell you a bunch of stuff so you can forget about it
+
+
 
  ---
  intro 5 stages / steps
