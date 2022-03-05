@@ -20,17 +20,12 @@ slidesMarkdown =
 
     ![Codebar Logo](/codebarlogo.png)
     """
-    , Slides.md """ 
-    # This talk
-
-    ## What is functional programming?
-    ## Is it for me? Where do I start?
-    ## Why does it matter?
-
-    """
-
-    -- Most writing about is historically academic
-    -- Seems impractical in production - no side effects
+    , Slides.mdFragments
+        [ "# This talk"
+        , "## What is functional programming?"
+        , "## Is it for me? Where do I start?"
+        , "## Why does it matter?"
+        ]
     , Slides.md """
     # History
 
@@ -42,7 +37,7 @@ slidesMarkdown =
 
     """
 
-    -- Nope. Actually functional makes things easier.
+    -- [cCc] Evan quote?
     , Slides.md """
     # Should we be scared?
     """
@@ -51,6 +46,11 @@ slidesMarkdown =
     """
     , Slides.md """
     # Skills for functional
+    ## Know your code (Actions, Data, Calculations)
+    ## Higher order, First class functions
+    ## Working with immutable
+    ## Data modelling
+    ## Architectural patterns (onion, state machine)
 
     """
     , Slides.md """
