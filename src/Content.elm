@@ -83,21 +83,45 @@ slidesMarkdown =
         >> Codebar Festival is 100 times more awesome than Functions!
         ```"""
         ]
-    , Slides.md """
-    # But do we got this?
-
-    ## Pure
-    ## Immutable
-    ## Outside world
-
-    """
+    , Slides.mdFragments
+        [ """
+         # But do we got this?
+          ## No side-effects & immutable data"""
+        , "- ### Nothing can change"
+        , "- ### No such thing as time"
+        , "- ### No random"
+        , "- ### No input or output"
+        , "- ### No connected database"
+        ]
     , Slides.md """
     # Skills for functional
     ## Know your code (Actions, Data, Calculations)
     ## Higher order, First class functions
-    ## Working with immutable
+    ## Working with immutable data
     ## Data modelling
-    ## Architectural patterns (onion, state machine)
+    ## Architectural patterns
+
+    """
+    , Slides.md """
+    # Actions, Data & Calculations
+
+    """
+    , Slides.md """
+    # Higher Order & First Class functions
+
+    """
+    , Slides.md """
+    # Working with immutable data
+
+    """
+    , Slides.md """
+    # Data modelling
+
+    """
+    , Slides.md """
+    # Architectural Patterns
+
+    ![The Elm Architecture](/tea.jpg)
 
     """
     , Slides.md """
@@ -107,8 +131,14 @@ slidesMarkdown =
     , Slides.md """
     # Intrigued?
 
-    - Static types + functional --> try elm
-    https://www.youtube.com/watch?v=oYk8CKH7OhE
+    ## Static Types + Functional --> Haskell, Elm, Reason ML
+    ## Dynamic Types + Functional --> Clojure, Elixir, ClojureScript
+
+    - [Let's be mainstream](https://www.youtube.com/watch?v=oYk8CKH7OhE)
+    - [Impossible states impossible](https://www.youtube.com/watch?v=IcgmSRJHu_8)
+    - [Immutable relational data](https://www.youtube.com/watch?v=28OdemxhfbU)
+    - [Eric Normand podcast, book & Clojure tutorials](https://lispcast.com/)
+    - [Monads!](https://www.youtube.com/watch?v=dkZFtimgAcM)
 
     """
     , Slides.md """ # Thanks!"""

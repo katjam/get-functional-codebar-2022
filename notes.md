@@ -77,16 +77,16 @@ But do we got this?
 
 - Pure functions means no side effects, so strictly mathematical, we can memoize - the calculation will always be the same give the same inputs and outputs.
 - Similar to caching that you are familiar with, but with caching, we need to check if we have the most up to date, because... side-effects.
-- So academics thought it was a great idea to remove side-effects & which means no shared state.
-- In modern JS, you can do this. No assignment (const ok, var/let is not), no loops (recursion instead), object literals & array literals are immutable
+- So academics thought it was a great idea to remove side-effects which means no need for shared state either.
 - Also no time, no random, no output rendered to the screen.
-
+- In modern JS, you can do this. No assignment (const ok, var/let is not), no loops (recursion instead), object literals & array literals are immutable
+ - OK it's not preactical to go pure functional and without the help of a functional language, it takes a lot of discipline.
+ - And if you do try to use a non functional language to learn, it will probably feel like you are fighting it rather than it helping you
+ - Maybe you've tried a partial typing system? You won't get the benefits unless you are 100% functional, like if you sometimes use mutable data, your whole program becomes unpredictable.
 
 ---
 Slide 7 - the 5 steps towards a functional mindset
 ---
-
- - OK it's not preactical to go pure functional and without the help of a functional language, it takes a lot of discipline.
  - So let's go back a step
  (Eric Normand)
  - Describes as a prgression
@@ -94,9 +94,9 @@ Slide 7 - the 5 steps towards a functional mindset
 ## Know your code (Actions, Data, Calculations)
 ### Actions: It matters when these happen and how many times - side effects / impure functions. Spend a lot of time on them, move all calculations out.
 
-### Data: Static immutable values.
+### Data: Static immutable values. Data never changes it is there to be interpreted whenever you want to look at it.
 
-### Calculation: Info in and out - always same result, no matter when they run - pure functions
+### Calculation: Info in and out - always same result, no matter when they run - pure functions.
 
 ## Higher order, First class
 - First class functions can be assigned to variables, passed as arguments or returned from functions
@@ -104,26 +104,30 @@ Slide 7 - the 5 steps towards a functional mindset
 - These can be actions or calculations
 - Need to know how to use them and how to create them
 - Makes currying possible.
-
+ Lambda Calculus heart function composition
+  - anonymous - they do not need to be named or assigned to a variable
+  - unary - only accept one parameter so if you need more than one, curry (n-ary)
+  - first-class - they can be inputs and they can return other functions
 
 ## Working with immutable
  Working with immutable data is something we have to enforce. Computer memory is designed to be mutable. The main skill is learning patterns of how to design for easy, reliable copying. e.g. Richard record copy. For example updating nested data decide which parts to copy. Transformation pipelines.
 
 
 ## Data modelling
-## Architectural patterns (onion, state machine)
+- API data for the outside to consume
+- internal data structures to make your program efficient, easy to reason about and enforce impossible states impossible
 
- Lambda Calculus heart function composition
-  - anonymous - they do not need to be named or assigned to a variable
-  - unary - only accept one parameter so if you need more than one, curry (n-ary)
-  - first-class - they can be inputs and they can return other functions
-
+## Architectural patterns
+- redux state machine / The Elm Architecture
+- onion
 
 ---
 Slide 8 - Why does it matter?
 ---
-easy to learn (small building blocks)
+- easy to learn (small building blocks)
+- Pure functions are reliable & easy to test
 Object oriented is about relationships and networks - and we all know that's a very complicated landscape to keep track of.
+- Branching adds complexity, instead model data so impossible states impossible 
 Imperative vs. Declarative
  - who do you trust with the how, yourself, right now, or a team of people
 
