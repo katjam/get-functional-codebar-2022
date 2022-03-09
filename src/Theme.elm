@@ -10,6 +10,13 @@ styles =
     , Css.Global.h2 [ marginBottom (rem 0.2) ]
     , img [ maxWidth (px 650), borderRadius (px 65) ]
     , Css.Global.pre [ color (hex "#fff") ]
+    , Css.Global.a
+        [ borderBottom2 (px 2) solid
+        , color (hex "#293940")
+        , fontWeight bold
+        , textDecoration none
+        ]
+    , Css.Global.li [ marginBottom (px 10) ]
     , Css.Global.blockquote
         [ fontSize (rem 2.1)
         , maxWidth (pct 60)
