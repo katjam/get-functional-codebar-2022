@@ -90,7 +90,7 @@ slidesMarkdown =
           ## No side-effects & immutable data"""
         , "- ### Nothing can change"
         , "- ### No such thing as time"
-        , "- ### No random"
+        , "- ### No use of random"
         , "- ### No input or output"
         , "- ### No connected database"
         ]

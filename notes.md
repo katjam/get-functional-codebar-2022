@@ -6,7 +6,7 @@ Slide 0 - Intro me
 - Web developer for 15 years
 - Mostly with charities & grassroots help them get the most out of tech
 
-How I got interested in functional
+I got interested in functional
 
 - 2014, saw a talk on F# - very cool and makes sense for my brain
 - As a kid terrible numeracy but algebra clicked
@@ -71,7 +71,6 @@ Slide 4 - Scared?
 - Evan explains: you don't need to understand group thery in order to know how many apples you have if you start with 2 and add one more.
 - You'll gradually start to understand the concepts before you can talk about them and that's OK. You might never want or need to talk about them. OK too.
 - One example Lexical closure which javascript was first language to bring to mainstream (invented in Scheme). Means that functions inside functions have access to variables in their wrapping function.
-- don't need to know it's called that to use it an understand it.
 - And functional paradigms are designed makes things easier for humans
 
 ---
@@ -96,7 +95,7 @@ Slide 6 - Already got this
 (Tick)
   - And stringing them together with Higher Order & First Class functions
 - Do not need to 're-learn' in fact probably already using functional.
-- Functional is not a language or a single paradigm. It is a collection of tools and skills.
+- It is a collection of tools and skills.
 - don't have to use 'functional language' most modern languages have built in the core tools needed to start using the paradigm
 - really that simple?
 
@@ -108,12 +107,12 @@ Slide 7 - But do we got this?
 - Pure functions means no side effects, so strictly mathematical, we can memoize - the calculation will always be the same give the same inputs and outputs.
 - Similar to caching that you are familiar with, but with caching, we need to check if we have the most up to date, because... side-effects.
 - So academics thought it was a great idea to remove side-effects which means no need for shared state either.
-- In modern JS, you can do this. No assignment (const ok, var/let is not), no loops (recursion instead), object literals & array literals are immutable
 
 (Tick)
 - Also no time, no random, no output rendered to the screen.
 - Great for proofs, but in practice, it means
  - OK it's not practical to go pure functional and without the help of a functional language, it takes a lot of discipline.
+- In modern JS, you can do this. No assignment (const ok, var/let is not), no loops (recursion instead), object literals & array literals are immutable
  - And if you do try to use a non functional language to learn, it will probably feel like you are fighting it rather than it helping you
  - Maybe you've tried a partial typing system? You won't get the benefits unless you are 100% functional, like if you sometimes use mutable data, your whole program becomes unpredictable.
 
@@ -157,7 +156,6 @@ Slide 11 - Know your code Actions
  Lambda Calculus heart function composition
   - anonymous - they do not need to be named or assigned to a variable
   - unary - only accept one parameter so if you need more than one, curry (n-ary)
-  - first-class - they can be inputs and they can return other functions
 
 ## Working with immutable
  Working with immutable data is something we have to enforce. Computer memory is designed to be mutable. The main skill is learning patterns of how to design for easy, reliable copying. e.g. Richard record copy. For example updating nested data decide which parts to copy. Transformation pipelines.
@@ -169,15 +167,17 @@ Slide 11 - Know your code Actions
 
 ## Architectural patterns
 - redux state machine / The Elm Architecture
+  Your state. State is reflected by view. User can see view and interact. If user interacts (or time changes, or a message is recieved from server), Message is sent that triggers a state change & view re-renders.
 - onion
 
 ---
 Slide 14 - Why does it matter?
 ---
-- easy to learn (small building blocks)
 - Pure functions are reliable & easy to test
-Object oriented is about relationships and networks - and we all know that's a very complicated landscape to keep track of.
-- Branching adds complexity, instead model data so impossible states impossible 
+- easy to learn small part of system (small building blocks)
+- Object oriented is about relationships and networks - and we all know that's a very complicated landscape to keep track of.
+- Branching adds complexity, instead model data so impossible states impossible
+- series of states of being and the functions that transform data into those states
 Imperative vs. Declarative
  - who do you trust with the how, yourself, right now, or a team of people
 
@@ -187,6 +187,6 @@ Slide 15 - Intrigued?
 ---
 
 - start recognising the patterns
-- seperate your pure functions from those with side-effects
 - try only using immutable
+- seperate your pure functions from those with side-effects
 - dive into a language that forces you into a functional paradigm
