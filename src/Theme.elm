@@ -6,10 +6,10 @@ import Css.Global exposing (class, img, pre)
 
 styles : List Css.Global.Snippet
 styles =
-    [ Css.Global.h1 [ marginBottom (rem 0.5) ]
-    , Css.Global.h2 [ marginBottom (rem 0.2) ]
+    [ Css.Global.h1 [ marginBottom (rem 0.4) ]
+    , Css.Global.h2 [ marginBottom (px 0) ]
     , img [ maxWidth (px 650), borderRadius (px 65) ]
-    , Css.Global.pre [ color (hex "#fff") ]
+    , Css.Global.pre [ color (hex "#fff"), marginTop (px 0) ]
     , Css.Global.a
         [ borderBottom2 (px 2) solid
         , color (hex "#293940")
@@ -20,7 +20,5 @@ styles =
     , Css.Global.blockquote
         [ fontSize (rem 2.1)
         , maxWidth (pct 60)
-
-        --, Css.Global.adjacentSiblings [ Css.Global.p [ fontSize (rem 1.5), marginLeft (px 80), marginTop (px 0) ] ]
         ]
     ]

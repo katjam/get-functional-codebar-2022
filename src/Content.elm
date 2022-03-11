@@ -58,20 +58,20 @@ slidesMarkdown =
     """
     , Slides.mdFragments
         [ "# You already got this!"
-        , "## Values that cannot change once created"
         , """
+        ## Values that cannot change once created
         ```javascript
         const coolestConferenceEver = "Codebar Festival";
         ```"""
-        , "## Functions without side-effects"
         , """
+        ## Functions without side-effects
         ```javascript
         function exaggerateByTen(number) {
           return number * 10;
         }
         ```"""
-        , "## Passable & Returnable functions"
         , """
+        ## Passable & Returnable functions
         ```javascript
         const howCool = function(quantityOfCool, thing) {
           return function(thing) { 
@@ -96,12 +96,9 @@ slidesMarkdown =
         ]
     , Slides.md """
     # Skills for functional
-    ## Know your code (Actions, Data, Calculations)
-    ## Higher order, First class functions
-    ## Working with immutable data
-    ## Data modelling
-    ## Architectural patterns
+    ## (as proposed by Eric Normand)
 
+    ![5 stages of functional](/5steps.jpg)
     """
     , Slides.mdFragments
         [ "# Identify *Data*"
@@ -168,11 +165,62 @@ slidesMarkdown =
         _ = Debug.log "Coolness statement"
             (tenTimesCoolness coolestConferenceEver)
         ```"""
-        ]
-    , Slides.md """
-    # Higher Order & First Class functions
+        , """
+        ```javascript
+        fetch('https://example.com/email-sender', 
+          { method: 'POST', body: JSON.stringify(emailData) }
+        ).then((response) => { return response.json(); }
+        ).then((res) => {
+          if (res.status === 201) { console.log("Tada!"); }
+        }).catch((error) => {
+          console.log("Oops: ", error);
+        });
+        ```
+        ```elm
+        type Msg
+            = SentMailRequest (Result Http.Error String)
 
-    """
+        sendEmail : Http.Body -> Cmd Msg
+        sendEmail =
+            Http.post
+                { url = "https://example.com/email-sender"
+                , body = emailJson
+                , expect = Http.expectString SentMailRequest
+            }
+        }
+        ```"""
+        ]
+    , Slides.mdFragments
+        [ "# Higher Order & First Class functions"
+        , """
+        ```javascript
+        function exaggerate(number, multiplier) {
+          return number * multiplier;
+        }
+
+        function curry2Helper(myFunction) {
+          return function(firstArg) {
+            return function(secondArg) {
+              return myFunction(firstArg, secondArg);
+            }
+          }
+        }
+        
+        const curriedMultiplier = curry2Helper(exaggerate);
+        const exaggerateFrom5 = curriedMultiplier(5); // [Function (anonymous)]
+        const exaggerateByTen = exaggerateFrom5(10); // 50
+        ```
+        """
+        , """
+        ```elm
+        exaggerate : Int -> Int -> Int
+        exaggerate number multiplier =
+            number * multiplier
+        
+        exaggerateFrom5 = exaggerate 5 -- <function> : Int -> Int
+        exaggerateByTen = exaggerateFrom5 10 -- 50 : Int
+        ```"""
+        ]
     , Slides.md """
     # Working with immutable data
 
@@ -180,13 +228,53 @@ slidesMarkdown =
     , Slides.md """
     # Data modelling
 
-    """
-    , Slides.md """
-    # Architectural Patterns
+    ```javascript
+    [ { name: "James",
+        age: 30,
+        pets: "2 cats, 1 parrot, 1 dog"
+      }, { name: "Janis",
+        age: 30,
+        pets: "1 cat, 2 fish"
+      }, { name: "Georgio",
+        age: 30,
+        pets: null
+      }
+    ]
+    ```
+    ```javascript
+    { thirtyYearOlds :
+      [ { james : { dog: true, otherPets: "1 parrot, 2 cats" }},
+        { janis : { dog: false, otherPets: "1 cat, 2 fish" }},
+        { georgio : { dog: false, otherPets: "" }},
+      ]
+    }
 
-    ![The Elm Architecture](/tea.jpg)
+    ```
+    ```elm
+    type alias Person = (String, Int, {cat: Int, fish: Int, parrot: Int})
+    type alias People = { withDog : List Person , withoutDog: List Person }
 
+    peopleByHasDog : People
+    peopleByHasDog = 
+        { withDog: [("James", 30, { cat: 2, fish: 0, parrot: 1 })]
+        , withoutDog: [("Janis", 30, { cat: 1, fish: 2, parrot: 0 })
+                 ,("Georgio", 30, { cat: 0, fish: 0, parrot: 0 })
+                 ]
+        }
+    ```
     """
+    , Slides.html
+        (div []
+            [ h1 [] [ text "Architectural Patterns" ]
+            , img [ src "/tea.jpg", style "width" "50%", style "margin-left" "-50px" ] []
+            , img
+                [ src "/onion.jpg"
+                , style "width" "50%"
+                , style "padding-left" "20px"
+                ]
+                []
+            ]
+        )
     , Slides.md """
     # Why does it matter?
 
@@ -194,16 +282,23 @@ slidesMarkdown =
     , Slides.md """
     # Intrigued?
 
-    ## Static Types + Functional --> Haskell, Elm, Reason ML
-    ## Dynamic Types + Functional --> Clojure, Elixir, ClojureScript
+    ---
 
-    - [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html)
-    - [Monads and Gonads](https://www.youtube.com/watch?v=dkZFtimgAcM) talk by Douglas Crockford
+    ## Some Functional languages to try
+
+    ### With Static Types:  Elm, Haskell, Reason ML
+
+    ### With Dynamic Types:  Clojure, Elixir, ClojureScript
+
+    ---
+
+    ## Some stuff to read and watch
+
+    - [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html) book by Harold Abelson, Gerald Jay Sussman with Julie Sussman
     - [Let's be mainstream](https://www.youtube.com/watch?v=oYk8CKH7OhE) talk by Evan Czaplicki
     - [Impossible states impossible](https://www.youtube.com/watch?v=IcgmSRJHu_8) talk by Richard Feldman
-    - [Immutable relational data](https://www.youtube.com/watch?v=28OdemxhfbU)
-    - [Eric Normand podcast, book & Clojure tutorials](https://lispcast.com/)
-
+    - [LispCast.com](https://lispcast.com/) - book, podcast & Clojure tutorials by Eric Normand
+    - [Monads and Gonads](https://www.youtube.com/watch?v=dkZFtimgAcM) talk by Douglas Crockford
     """
     , Slides.md """ # Thanks!"""
     ]

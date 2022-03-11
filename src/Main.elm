@@ -19,7 +19,7 @@ slidesOptions =
                 Slides.Styles.elmMinimalist
                     (hex "#dcf9f9")
                     (hex "#293940")
-                    (px 18)
+                    (px 16)
                     (hex "#3e2f40")
         , title = "Let's get functional - Codebar 2022"
     }

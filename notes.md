@@ -23,7 +23,7 @@ Slide 1 - talk outline
 - functional is a big topic, not teaching it to you
 
 (tick)
-- brief history, steeped in academia (no surpise there)
+- brief history
 - tools and vocab to get started
 - plain language, maybe not strictly accurate in a mathematical sense
 - intention give access to the ideas, not make you a master
@@ -109,9 +109,10 @@ Slide 7 - But do we got this?
 - So academics thought it was a great idea to remove side-effects which means no need for shared state either.
 
 (Tick)
-- Also no time, no random, no output rendered to the screen.
 - Great for proofs, but in practice, it means
- - OK it's not practical to go pure functional and without the help of a functional language, it takes a lot of discipline.
+- (tick) (tick ...)Also no time, no random, no output rendered to the screen.
+
+- OK it's not practical to go pure functional and without the help of a functional language, it takes a lot of discipline.
 - In modern JS, you can do this. No assignment (const ok, var/let is not), no loops (recursion instead), object literals & array literals are immutable
  - And if you do try to use a non functional language to learn, it will probably feel like you are fighting it rather than it helping you
  - Maybe you've tried a partial typing system? You won't get the benefits unless you are 100% functional, like if you sometimes use mutable data, your whole program becomes unpredictable.
@@ -146,24 +147,31 @@ Slide 10 - Know your code Calculations
 Slide 11 - Know your code Actions
 ---
  - Actions: It matters when these happen and how many times - side effects / impure functions. Spend a lot of time on them, move all calculations out.
+ - One easy way to spot for sure is no return, but having a return doesn't mean there are no side-effects
+ - Think about whether it matters when or how many times run
+ - Does it rely on information from the outside?
+ - e.g. email
 
 ## Higher order, First class
 - First class functions can be assigned to variables, passed as arguments or returned from functions
-- Higher order functions that take those functions as arguments or return functions as arguments
+- Higher order functions that take those functions as arguments or return functions
 - These can be actions or calculations
+- anonymous - they do not need to be named or assigned to a variable
 - Need to know how to use them and how to create them
-- Makes currying possible.
- Lambda Calculus heart function composition
-  - anonymous - they do not need to be named or assigned to a variable
-  - unary - only accept one parameter so if you need more than one, curry (n-ary)
+(Tick)
+- One of the powers of this is partially applied functions which makes currying possible. Built into functional languages.
+- Here's example in js and elm
+ - Because elm is designed as functional, there is always a return, so don't need the keyword return nor the scoping curly braces
 
 ## Working with immutable
- Working with immutable data is something we have to enforce. Computer memory is designed to be mutable. The main skill is learning patterns of how to design for easy, reliable copying. e.g. Richard record copy. For example updating nested data decide which parts to copy. Transformation pipelines.
+ - Working with immutable data is something we have to enforce. Computer memory is designed to be mutable. The main skill is learning patterns of how to design for easy, reliable copying. 
+ - For example updating nested data decide which parts to copy. Transformation pipelines.
 
 
 ## Data modelling
 - API data for the outside to consume
 - internal data structures to make your program efficient, easy to reason about and enforce impossible states impossible
+- Example people are only allowed 1 dog but other animals as many as they want
 
 ## Architectural patterns
 - redux state machine / The Elm Architecture
