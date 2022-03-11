@@ -156,7 +156,7 @@ slidesMarkdown =
         ]
     , Slides.mdFragments
         [ "# Identify *Actions*"
-        , "## Functions with side effects (Impure Functions)"
+        , "## Functions with side-effects (Impure Functions)"
         , """
         ```javascript
         console.log(tenTimesCoolness(coolestConferenceEver));
@@ -258,9 +258,9 @@ slidesMarkdown =
     ```
     """
         ]
-    , Slides.md """
-    # Data modelling
-
+    , Slides.mdFragments
+        [ "# Data modelling"
+        , """
     ```javascript
     [ { name: "James",
         age: 30,
@@ -274,6 +274,8 @@ slidesMarkdown =
       }
     ]
     ```
+    """
+        , """
     ```javascript
     { thirtyYearOlds :
       [ { james : { dog: true, otherPets: "1 parrot, 2 cats" }},
@@ -296,6 +298,7 @@ slidesMarkdown =
         }
     ```
     """
+        ]
     , Slides.html
         (div []
             [ h1 [] [ text "Architectural Patterns" ]
