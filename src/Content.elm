@@ -1,6 +1,6 @@
 module Content exposing (slidesMarkdown)
 
-import Html.Styled as Html exposing (blockquote, div, h1, img, p, text)
+import Html.Styled as Html exposing (blockquote, div, h1, h2, img, p, text)
 import Html.Styled.Attributes exposing (src, style)
 import Slides
 
@@ -71,7 +71,7 @@ slidesMarkdown =
         }
         ```"""
         , """
-        ## Passable & Returnable functions
+        ## Assignable, passable & returnable functions
         ```javascript
         const howCool = function(quantityOfCool, thing) {
           return function(thing) { 
@@ -156,7 +156,7 @@ slidesMarkdown =
         ]
     , Slides.mdFragments
         [ "# Identify *Actions*"
-        , "## Functions that cause side effects (Impure Functions)"
+        , "## Functions with side effects (Impure Functions)"
         , """
         ```javascript
         console.log(tenTimesCoolness(coolestConferenceEver));
@@ -221,10 +221,43 @@ slidesMarkdown =
         exaggerateByTen = exaggerateFrom5 10 -- 50 : Int
         ```"""
         ]
-    , Slides.md """
-    # Working with immutable data
+    , Slides.mdFragments
+        [ "# Working with immutable"
+        , """
+    ```javascript
+    const initialState = { first: { second: { id1: { fourth: 'a' }, id2: { fourth: 'b' } } } }
 
+    function updateVeryNestedField(state, action) {
+      return {
+        ...state,
+        first: {
+          ...state.first,
+          second: {
+            ...state.first.second,
+            [action.someId]: {
+              ...state.first.second[action.someId],
+              fourth: action.someValue
+            }
+          }
+        }
+      }
+    }
+
+    function updateNestedState(state, action) {
+      let nestedState = state.nestedState
+      nestedState.nestedField = action.data // This is mutation
+      return { ...state, nestedState }
+    }
+
+    import { createReducer } from '@reduxjs/toolkit'
+    const reducer = createReducer(initialState, {
+      UPDATE_ITEM: (state, action) => {
+        state.first.second[action.someId].fourth = action.someValue
+      }
+    })
+    ```
     """
+        ]
     , Slides.md """
     # Data modelling
 
@@ -275,12 +308,31 @@ slidesMarkdown =
                 []
             ]
         )
+    , Slides.html
+        (div []
+            [ h1 [] [ text "Why does it matter?" ]
+            , h2
+                [ style "margin-top" "0"
+                , style "margin-left" "250px"
+                ]
+                [ text "...because we are humans!" ]
+            , img
+                [ src "/humans.jpg"
+                , style "height" "260px"
+                , style "width" "65%"
+                ]
+                []
+            , img
+                [ src "/computers.jpg"
+                , style "height" "260px"
+                , style "width" "65%"
+                , style "margin-left" "160px"
+                ]
+                []
+            ]
+        )
     , Slides.md """
-    # Why does it matter?
-
-    """
-    , Slides.md """
-    # Intrigued?
+    # What now?
 
     ---
 

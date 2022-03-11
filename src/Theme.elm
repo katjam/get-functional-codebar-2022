@@ -6,10 +6,10 @@ import Css.Global exposing (class, img, pre)
 
 styles : List Css.Global.Snippet
 styles =
-    [ Css.Global.h1 [ marginBottom (rem 0.4) ]
+    [ Css.Global.h1 [ marginBottom (px 0) ]
     , Css.Global.h2 [ marginBottom (px 0) ]
     , img [ maxWidth (px 650), borderRadius (px 65) ]
-    , Css.Global.pre [ color (hex "#fff"), marginTop (px 0) ]
+    , Css.Global.pre [ color (hex "#fff"), marginTop (px -2) ]
     , Css.Global.a
         [ borderBottom2 (px 2) solid
         , color (hex "#293940")
